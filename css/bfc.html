@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* BFC 设置自适应两栏布局 */
+    .left {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .right {
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      overflow: hidden;
+    }
+    /* BFC 清除浮动 */
+    .father1 {
+      border: 1px solid #000;
+      overflow: hidden;
+    }
+    .son1 {
+      width: 100px;
+      height: 100px;
+      background-color: #eee;
+      float: left;
+    }
+    /* BFC 消除margin */
+    .father2 {
+      overflow: hidden;
+    }
+    .son2 {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      margin: 30px;
+    }
+    .father3 {
+      overflow: hidden;
+    }
+    .son3 {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      margin: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!--BFC 设置自适应两栏布局-->
+  <div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <!--BFC 清除浮动-->
+  <div class="father1">
+    <div class="son1" style="width: 100px;height: 100px;background: #eee;float: left;"></div>
+  </div>
+  <!--BFC 消除margin-->
+  <div class="father2">
+    <div class="son2"></div>
+  </div>
+  <div class="father3">
+    <div class="son3"></div>
+  </div>
+</body>
+</html>

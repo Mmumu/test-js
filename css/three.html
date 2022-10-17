@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两栏布局</title>
+</head>
+<style>
+  /* 两边使用 float，中间使用 margin */
+  /* .wrap {
+    background: #eee;
+    overflow: hidden;
+    padding: 20px;
+    height: 200px;
+  }
+  .left {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background: coral;
+  }
+  .right {
+    width: 120px;
+    height: 200px;
+    float: right;
+    background: lightblue;
+  }
+  .middle {
+    margin-left: 220px;
+    height: 200px;
+    background: lightpink;
+    margin-right: 140px;
+  } */
+
+  /* 两边使用 absolute，中间使用 margin */
+  /* .wrap {
+    position: relative;
+  }
+  
+  .left,
+  .right,
+  .middle {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+  }
+
+  .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    background: green;
+  }
+
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    background: green;
+  }
+
+  .middle {
+    margin: 0 110px;
+    background: black;
+    color: white;
+  } */
+
+  /* 两边使用 float 和负 margin */
+
+  /* flex */
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left,
+  .right,
+  .middle {
+    height: 100px;
+  }
+
+  .left {
+    width: 200px;
+    background: coral;
+  }
+
+  .right {
+    width: 120px;
+    background: lightblue;
+  }
+
+  .middle {
+    background: #555;
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  /* grid网格布局 */
+</style>
+<body>
+  <div class="wrap">
+    <div class="left">左侧</div>
+    <div class="middle">中间</div>
+    <div class="right">右侧</div>
+  </div>
+</body>
+</html>

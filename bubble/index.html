@@ -1,0 +1,74 @@
+<!-- <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件冒泡演示</title>
+<style>
+  div{padding:30px;}
+  #div1{background:red;}
+  #div2{background:green;}
+  #div3{background:blue;position:absolute;top:200px;}
+</style>
+<script>
+  window.onload = function(){
+    //获取各个元素
+    var oBody = document.getElementById('body1');
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    //对各个元素的单击事件绑定事件处理函数fn1
+    window.onclick = fn1;
+    document.onclick = fn1;
+    oBody.onclick = fn1;
+    oDiv1.onclick = fn1;
+    oDiv2.onclick = fn1;
+    oDiv3.onclick = fn1               
+    function fn1(){//定义事件处理函数
+          console.log(this);
+    }
+  };
+</script>
+</head>
+<body id="body1">
+  <div id="div1">    
+    <div id="div2">
+      <div id="div3"></div>
+    </div>
+  </div>
+</body>
+</html> -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>使用addEventListener()实现事件冒泡</title>
+<style>
+  div{padding:30px;}
+  #div1{background:red;}
+  #div2{background:green;}
+  #div3{background:blue;position:absolute;top:200px;}
+</style>
+<script>
+  window.onload = function(){
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    //调用addEventListener()实现事件冒泡
+    oDiv1.addEventListener('click',fn1,false);
+    oDiv2.addEventListener('click',fn1,false);
+    oDiv3.addEventListener('click',fn1,false);
+
+    function fn1(){
+      console.log(this);
+    }
+  };
+</script>
+</head>
+<body id="body1">
+  <div id="div1">    
+    <div id="div2">
+      <div id="div3"></div>
+    </div>
+  </div>
+</body>
+</html>
