@@ -122,6 +122,40 @@ let obj = {
 // var arr = [['name', 'xxx'], ['age', 19]]
 // console.log(Object.fromEntries(arr), 'Object.fromEntries')
 
+// 2022-10-30
+// Object的静态方法
+// 获取对象上属性的描述对象 Object.getOwnPropertyDescriptor()
+console.log(Object.getOwnPropertyDescriptor(obj, 'name'))
+// 获取对象上所有属性 Object.keys()/
+console.log(Object.keys(obj))
+console.log(Object.getOwnPropertyNames(obj))
+
+// 定义对象上属性的描述属性 Object.defineProperty
+// Object.defineProperty(obj, 'name', {
+//   // value: 333,
+//   get() {
+//     console.log('有人要来拿name了！！！！')
+//     return this.name
+//   },
+//   set (v) {
+//     console.log('触发存取器了！！！')
+//   }
+// })
+// obj.name = 'hahaha'
+// console.log(obj.name)
 
 
-
+// 写法二
+var o = {
+  pVla : '',
+  get p() {
+    return this.pVla;
+  },
+  set p(value) {
+    this.pVla = value
+    console.log('setter: ' + value);
+  }
+};
+o.p = 2
+console.log(o.p, 'kkk')
+console.log(Object.getPrototypeOf(Function))
